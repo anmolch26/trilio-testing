@@ -8,7 +8,7 @@ import { useAnalytics } from "../hooks/useAnalytics";
 // Brand logos for trust badges
 import MoiraLogo from "@/assests/App Icon MOIRA logo (1).png";
 import jetsonlogo from "@/assests/jetsonlogo1.jpg";
-import Pglogo from "@/assests/P&Glogo.jpg";
+import Pglogo from "@/assests/PGlogo.jpg";
 import Maricologo from "@/assests/Marico_Logo1.jpg";
 
 // S3 URLs for carousel images
@@ -77,9 +77,8 @@ const Hero = () => {
         containerRef.current.getBoundingClientRect();
       const x = (e.clientX - left) / width - 0.5;
       const y = (e.clientY - top) / height - 0.5;
-      imageRef.current.style.transform = `perspective(1000px) rotateY(${
-        x * 2.5
-      }deg) rotateX(${-y * 2.5}deg) scale3d(1.02, 1.02, 1.02)`;
+      imageRef.current.style.transform = `perspective(1000px) rotateY(${x * 2.5
+        }deg) rotateX(${-y * 2.5}deg) scale3d(1.02, 1.02, 1.02)`;
     };
     const handleMouseLeave = () => {
       if (!imageRef.current) return;
@@ -246,21 +245,19 @@ const Hero = () => {
                 <div className="flex gap-4">
                   <button
                     onClick={() => setActiveView("dashboard")}
-                    className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 border ${
-                      activeView === "dashboard"
+                    className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 border ${activeView === "dashboard"
                         ? "bg-teal-500 border-teal-500 text-white shadow-lg shadow-teal-500/30"
                         : "bg-gray-800/40 border-white/10 text-white/70 hover:bg-white/10 hover:text-white backdrop-blur-sm"
-                    }`}
+                      }`}
                   >
                     Dashboard
                   </button>
                   <button
                     onClick={() => setActiveView("wingman")}
-                    className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 border ${
-                      activeView === "wingman"
+                    className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 border ${activeView === "wingman"
                         ? "bg-teal-500 border-teal-500 text-white shadow-lg shadow-teal-500/30"
                         : "bg-gray-800/40 border-white/10 text-white/70 hover:bg-white/10 hover:text-white backdrop-blur-sm"
-                    }`}
+                      }`}
                   >
                     AI Wingman
                   </button>
