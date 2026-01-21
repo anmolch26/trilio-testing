@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 import { visualizer } from "rollup-plugin-visualizer";
 import { createHtmlPlugin } from "vite-plugin-html";
 import ViteSitemap from 'vite-plugin-sitemap';
-import { criticalCSS } from "./vite-plugin-critical-css";
+// import { criticalCSS } from "./vite-plugin-critical-css"; // Disabled - causes Puppeteer dependency
 import { blogMetaTagsMiddleware } from "./vite-plugin-blog-meta";
 
 const routes = [
@@ -36,7 +36,7 @@ export default defineConfig(({ mode }) => ({
 
 
     mode === 'development' && componentTagger(),
-    mode === 'production' && criticalCSS(),
+    // mode === 'production' && criticalCSS(), // Disabled - causes Puppeteer dependency
     visualizer({
       open: false,
       filename: "dist/stats.html",
